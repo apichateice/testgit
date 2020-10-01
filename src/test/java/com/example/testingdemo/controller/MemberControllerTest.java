@@ -41,7 +41,7 @@ public class MemberControllerTest {
         when(memberService.createMember(any(Member.class))).thenReturn(member);
 
         //Act
-        ResultActions result = mockMvc.perform(post("/members")
+        ResultActions result = mockMvc.perform(post("/api")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsBytes(member)));
 
