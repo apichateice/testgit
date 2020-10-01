@@ -22,7 +22,7 @@ public class MemberController {
     
     @GetMapping
     public String hello(){
-    	System.out.println("HELLO TES");
+    	System.out.println("HELLO TEST");
         return "HELLO TEST";
     }
 
