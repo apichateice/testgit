@@ -12,6 +12,13 @@ pipeline {
                 ''' 
             }
         }
+        
+        stage ('Build other') {
+           git url: 'https://github.com/apichateice/hellotest.git'
+		   def mvnHome = tool 'M3'
+		   env.PATH = "${mvnHome}/bin:${env.PATH}"
+		   sh 'mvn -B clean verify'
+        }
 
         stage ('Build') {
             steps {
